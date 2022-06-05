@@ -1,0 +1,46 @@
+body{
+    width: fit-content;
+    margin: auto;
+}
+
+#userB{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    margin: 50px auto;
+}
+
+#nameB{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 12vw;
+    height: 6vh;
+}
+
+#iconB{
+    border: 3px solid #000;
+    width: 6vh;
+    height: 6vh;
+}
+
+#champB{
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    width: 100vw;
+    height: 15vh;
+}
+
+span{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+img{
+    display:block;
+    width: 100%;
+}
+
+p{margin:0;}
