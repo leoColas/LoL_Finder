@@ -28,6 +28,9 @@ body{
 #champB{
     border-top: 3px solid #000;
     border-bottom: 3px solid #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
     width: 100vw;
     height: 15vh;
 }
