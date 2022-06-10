@@ -1,5 +1,5 @@
 body{
-    width: 50vw;
+    width: 800px;
     margin: auto;
     background-color: rgb(3, 3, 40);
     border-left: 2px solid rgb(88, 88, 88);
@@ -10,15 +10,15 @@ body{
     display: flex;
     justify-content: end;
     flex-direction: row;
-    width: 50vw;
-    height:10vh;
-    margin: auto;
+    width: 800px;
+    height:100px;
+    margin: auto;   
     background-color: rgb(3, 3, 40);
 }
 
 #icon{
-    height: 8vh;
-    width: 8vh;
+    height: 75px;
+    width: 75px;
     border: 2px solid rgb(88, 88, 88);
     border-radius:10px;
 }
@@ -35,13 +35,14 @@ body{
 }
 
 #champB{
-    border-bottom: 2px solid rgb(88, 88, 88);
+    
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    width: 50vw;
-    height: 35vh;
+    width: 800px;
+    height: 340px;
     background-color: rgb(3, 3, 40);
+    border-bottom: 2px solid rgb(88, 88, 88);
 }
 
 p,span,h2{
@@ -69,7 +70,7 @@ img{
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    width: 8vw;
+    width: 152px;
 
 }
 
@@ -91,13 +92,13 @@ img{
 
 .c{
     position:relative;
-    top:12.85vh;
+    top:125px;
     z-index: 2;
 }
 
 .p{
     position:relative;
-    top:-11.81vh;
+    top:-115px;
     transform: scale(80%,80%);
     border-radius: 250px;
     z-index: 1; 
