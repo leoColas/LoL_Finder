@@ -91,14 +91,17 @@ img{
 
 .c{
     position:relative;
-    top:125px;
+    top:12.85vh;
     z-index: 2;
 }
 
 .p{
     position:relative;
-    top:-115px;
+    top:-11.81vh;
     transform: scale(80%,80%);
     border-radius: 250px;
     z-index: 1; 
 }
+
+
+/* 1vw = 19,19875 1vh = 9,73*/
