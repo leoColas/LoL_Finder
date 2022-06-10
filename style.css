@@ -35,22 +35,25 @@ body{
 }
 
 #champB{
-    border-top: 2px solid rgb(88, 88, 88);
     border-bottom: 2px solid rgb(88, 88, 88);
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     width: 50vw;
-    height: 20vh;
-
+    height: 35vh;
     background-color: rgb(3, 3, 40);
 }
 
-p,span{
+p,span,h2{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     color: rgb(190, 190, 190);
+}
+
+h2{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 img{
@@ -59,12 +62,15 @@ img{
 }
 
 .center{text-align: center;}
+.red{color:red;}
+.big{font-size: 30px;}
 
 .mastery{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
-    height: 20vh;
+    width: 8vw;
+
 }
 
 .va{
@@ -81,4 +87,18 @@ img{
 .border{
     border: 2px solid rgb(88, 88, 88);
     border-radius:20px;
+}
+
+.c{
+    position:relative;
+    top:125px;
+    z-index: 2;
+}
+
+.p{
+    position:relative;
+    top:-115px;
+    transform: scale(80%,80%);
+    border-radius: 250px;
+    z-index: 1; 
 }
