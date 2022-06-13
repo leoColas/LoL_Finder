@@ -4,7 +4,7 @@ var region = "euw1";
 const getSummonerData = async (summoner,region) => {
 
     //Global
-    const APIkey = "RGAPI-35adbccf-5a21-4c09-ba25-f230e7ceb7c9";
+    const APIkey = "RGAPI-07b4eb66-1ba8-46e5-be5b-0b7b26faf32a";
     const nameArea = document.getElementById('name')
     const lvlArea = document.getElementById('lvl')
 
@@ -64,8 +64,63 @@ const getSummonerData = async (summoner,region) => {
 
     }
 
+    const getMatches = async () => {
+        const mainBox = document.getElementById('lastGame')
+        const rightTeam = document.getElementById('right')
+        const leftTeam = document.getElementById('left')
+
+        let res = await fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${globalData.puuid}/ids?start=0&count=20&api_key=${APIkey}`)
+        let data = await res.json()
+
+        let matchId = data[0]
+
+        let match0 = await fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${APIkey}`)
+        match0 = await match0.json()
+        console.log(match0)
+        const getIconBlueTeam = async (matchData) => {
+            let match0 = matchData
+            let summonerInfo = await fetch(`https://${zone}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${match0.info.participants[i].puuid}?api_key=${APIkey}`)
+            let data3 = await summonerInfo.json()
+            return `https://ddragon.leagueoflegends.com/cdn/12.10.1/img/profileicon/${data3.profileIconId}.png`
+        }
+
+        const getIconRedTeam = async (matchData) => {
+            let match01 = matchData
+            let summonerInfo2 = await fetch(`https://${zone}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${match01.info.participants[i].puuid}?api_key=${APIkey}`)
+            let data4 = await summonerInfo2.json()
+            return `https://ddragon.leagueoflegends.com/cdn/12.10.1/img/profileicon/${data4.profileIconId}.png`
+        }
+
+        var playerIconLinks = Array();
+
+        for(i = 0;i < 10;i++){
+            if(i > 4){
+                await playerIconLinks.push(await getIconBlueTeam(match0))
+                //leftTeam.innerHTML = leftTeam.innerHTML + `<div class="nameBox"><img src="${}" alt="icon"><p class="small blue name">${match0.info.participants[i].summonerName}</p></div>`
+            }else{
+                await playerIconLinks.push(await getIconRedTeam(match0))
+                //rightTeam.innerHTML = rightTeam.innerHTML + `<div class="nameBox"><img src="${getIconRedTeam(match0)}" alt="icon"><p class="small red name">${match0.info.participants[i].summonerName}</p></div>`                
+            }
+        }
+
+        playerIconLinks.toString()
+        console.log(playerIconLinks)
+
+        for(i = 0;i < 10;i++){
+            if(i > 4){
+                leftTeam.innerHTML = leftTeam.innerHTML + `<div class="nameBox"><img class="icon" src="${playerIconLinks[i]}" alt="icon"><p class="small blue name">${match0.info.participants[i].summonerName}</p></div>`                
+            }else{
+                rightTeam.innerHTML = rightTeam.innerHTML + `<div class="nameBox"><img class="icon" src="${playerIconLinks[i]}" alt="icon"><p class="small red name">${match0.info.participants[i].summonerName}</p></div>`                
+            }
+        }
+
+        mainBox.innerHTML = `<div id="left">${leftTeam.innerHTML}</div><img id="map" src="https://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map${match0.info.mapId}.png" alt=""><div id="right">${rightTeam.innerHTML}</div>`
+    }
+    
+
     getIcon()
     getMastery()
+    getMatches()
 }
 
 getSummonerData(summoner,region)

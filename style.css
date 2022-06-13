@@ -42,7 +42,7 @@ body{
     width: 800px;
     height: 340px;
     background-color: rgb(3, 3, 40);
-    border-bottom: 2px solid rgb(88, 88, 88);
+    
 }
 
 p,span,h2{
@@ -64,6 +64,7 @@ img{
 
 .center{text-align: center;}
 .red{color:red;}
+.blue{color:blue;}
 .big{font-size: 30px;}
 
 .mastery{
@@ -102,6 +103,50 @@ img{
     transform: scale(80%,80%);
     border-radius: 250px;
     z-index: 1; 
+}
+
+#lastGame{
+    margin:auto;
+    width:800px;
+    height:400px;
+    display: flex;
+}
+
+#right{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end ;
+}
+
+#left{
+    width: 200px;
+}
+
+#map{
+    width: 400px;
+    border: 2px solid rgb(88, 88, 88);
+}
+
+.nameBox{
+    display:flex;
+    width: 196px;
+    height: 60px;
+    border: 2px solid rgb(0, 75, 75);
+}
+
+.name{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.small{
+    font-size: 15px;
+}
+
+.icon{
+    width: 60px;
 }
 
 
